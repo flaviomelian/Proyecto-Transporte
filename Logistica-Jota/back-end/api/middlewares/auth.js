@@ -3,7 +3,9 @@ const jwt = require("jsonwebtoken");
 
 function checkAuth(req, res, next) {
   // Verificamos si la petición tiene el encabezado de autorización
+  console.log("CHECKAUTH");
   if (!req.headers.authorization) {
+    console.log("CHECKAUTH - Token not found");
     // Si no se encuentra el encabezado de autorización, retorna un error 404
     return res.status(404).send("Token not found");
   }
